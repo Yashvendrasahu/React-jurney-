@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApniDukaan - Shop Details</title>
+  <!-- Naya CSS file link -->
+  <link rel="stylesheet" href="css/shop-details.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="logo-container">
+        <div class="logo">
+          <span class="brand-apni">apni</span><span class="brand-dukaan">dukaan</span>
+        </div>
+        <p class="logo-subtitle">Admin Panel</p>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a>
+        </li>
+        <!-- Yeh active class yahan Shop Verification par hai -->
+        <li class="nav-item active">
+          <a href="#"><i class="fa-solid fa-shield-halved"></i> Shop Verification</a>
+        </li>
+        <li class="nav-item">
+          <a href="users.html"><i class="fa-solid fa-user-group"></i> Users</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-bag-shopping"></i> Orders</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-chart-simple"></i> Reports</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-bottom">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+        </li>
+        <li class="nav-item logout">
+          <a href="#" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Header -->
+<header class="top-header">
+      
+      <!-- NAYA: Mobile ke liye Hamburger aur Logo (Desktop pe hide rahega) -->
+      <div class="mobile-header-left">
+        <button id="mobileMenuBtn" class="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="mobile-logo-box">
+          <div class="logo">
+            <span class="brand-apni">apni</span><span class="brand-dukaan">dukaan</span>
+          </div>
+          <span class="mobile-logo-subtitle">Admin Panel</span>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search for stores, users, or orders...">
+      </div>
+      
+      <!-- Right Side Profile & Notifications -->
+      <div class="header-right">
+        <div class="notification">
+          <i class="fa-regular fa-bell"></i>
+          <span class="dot"></span>
+        </div>
+        <div class="user-profile">
+          <div class="user-info">
+            <span class="user-name" id="adminName">Admin User</span>
+            <span class="user-role">PLATFORM ADMIN</span>
+          </div>
+          <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="Admin Avatar" class="avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Body -->
+    <div class="dashboard-body">
+      
+      <!-- Breadcrumbs & Title -->
+      <div class="page-header">
+        <div class="breadcrumbs">
+          Dashboard <i class="fa-solid fa-chevron-right"></i> Shop Verification <i class="fa-solid fa-chevron-right"></i> <strong>Shop Details</strong>
+        </div>
+        <h1>Shop Verification Details</h1>
+        <p>Review the complete business information before approving or rejecting this registration.</p>
+      </div>
+
+      <!-- Main Layout Grid -->
+      <div class="shop-details-layout">
+        
+        <!-- Left Column: Shop Data -->
+        <div class="left-column">
+          
+          <!-- Shop Main Info Card -->
+          <div class="card shop-header-card">
+            <div class="shop-logo-box">
+              <i class="fa-solid fa-leaf"></i>
+              <span>FRESHMART</span>
+            </div>
+            <div class="shop-main-info">
+              <div class="shop-title-row">
+                <h2>FreshMart Grocery</h2>
+                <span class="badge pending">Pending Verification</span>
+              </div>
+              <div class="shop-meta-grid">
+                <div class="meta-item">
+                  <span class="meta-label">TYPE</span>
+                  <span class="meta-value">Product Based</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">CATEGORY</span>
+                  <span class="meta-value"><i class="fa-solid fa-bag-shopping"></i> Grocery</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">DATE APPLIED</span>
+                  <span class="meta-value">26 July 2026</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">ID</span>
+                  <span class="meta-value">#FM-8821</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Owner & Summary Grid -->
+          <div class="two-col-grid">
+            <!-- Owner Info -->
+            <div class="card">
+              <h3 class="card-title"><i class="fa-solid fa-id-badge"></i> Owner Information</h3>
+              <div class="owner-profile">
+                <div class="avatar-circle green-bg">RP</div>
+                <div class="owner-name-box">
+                  <h4>Ramesh Patel</h4>
+                  <span>Chief Proprietor</span>
+                </div>
+              </div>
+              <ul class="contact-list">
+                <li><i class="fa-regular fa-envelope"></i> ramesh.p@freshmart.in <span class="verified-text"><i class="fa-solid fa-circle-check"></i> Verified</span></li>
+                <li><i class="fa-solid fa-phone"></i> +91 9876543210</li>
+              </ul>
+            </div>
+
+            <!-- Business Summary -->
+            <div class="card">
+              <h3 class="card-title"><i class="fa-solid fa-circle-info"></i> Business Summary</h3>
+              <p class="summary-text">
+                FreshMart Grocery is a neighborhood flagship store providing farm-fresh produce and artisanal pantry staples. Our mission is to bridge the gap between local farmers and urban consumers through a seamless digital-first grocery experience. Established in 2024, we aim to scale our hyperlocal delivery network across 15 sectors.
+              </p>
+            </div>
+          </div>
+
+          <!-- Images & Docs -->
+          <div class="card">
+            <h3 class="card-title">Business Images & Documentation</h3>
+            <div class="image-gallery">
+              <div class="img-box doc-placeholder"><i class="fa-regular fa-file-image"></i> FreshMart Docs</div>
+              <div class="img-box store-img1"></div>
+              <div class="img-box store-img2"></div>
+            </div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="card location-card">
+            <div class="card-header-flex">
+              <h3 class="card-title"><i class="fa-solid fa-location-dot"></i> Store Location</h3>
+              <span class="coordinates">28.6139° N, 77.2090° E</span>
+            </div>
+            <div class="location-content">
+              <div class="map-placeholder">
+                <div class="map-pin"><i class="fa-solid fa-location-dot"></i></div>
+              </div>
+              <div class="address-details">
+                <span class="meta-label">ADDRESS</span>
+                <p class="address-text">Plot No. 45, Ground Floor, Sector 18 Market, Gurugram, Haryana - 122015, India</p>
+                <button class="btn-secondary map-btn"><i class="fa-solid fa-diamond-turn-right"></i> View in Google Maps</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hours & Checklist Grid -->
+          <div class="two-col-grid">
+            <!-- Operating Hours -->
+            <div class="card">
+              <h3 class="card-title"><i class="fa-regular fa-clock"></i> Operating Hours</h3>
+              <table class="hours-table">
+                <tr>
+                  <td>Monday - Friday</td>
+                  <td><strong>08:00 AM - 10:00 PM</strong></td>
+                </tr>
+                <tr>
+                  <td>Saturday</td>
+                  <td><strong>09:00 AM - 11:00 PM</strong></td>
+                </tr>
+                <tr>
+                  <td>Sunday</td>
+                  <td class="text-green"><strong>09:00 AM - 01:00 PM</strong></td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- Checklist Progress -->
+            <div class="card">
+              <div class="card-header-flex">
+                <h3 class="card-title">Checklist Progress</h3>
+                <span class="progress-count">7/7</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" style="width: 100%;"></div>
+              </div>
+              <ul class="checklist-items">
+                <li><i class="fa-solid fa-circle-check text-green"></i> Email & Phone Verification</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Business Logo & Storefront</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Location & Geocode mapping</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Shop Description & Operating Hours</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Action Panel -->
+        <div class="right-column">
+          
+          <!-- Verification Summary & Buttons -->
+          <div class="card action-card">
+            <h3 class="card-title">Verification Summary</h3>
+            
+            <div class="summary-list">
+              <div class="summary-item">
+                <span>Submission Date</span>
+                <strong>26 Jul 2026</strong>
+              </div>
+              <div class="summary-item">
+                <span>Application Type</span>
+                <strong>New Merchant</strong>
+              </div>
+              <div class="summary-item">
+                <span>Risk Level</span>
+                <span class="badge low-risk">LOW</span>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn-primary full-width" id="approveShopBtn">
+                <i class="fa-regular fa-circle-check"></i> Approve Shop
+              </button>
+              <button class="btn-danger-outline full-width" id="rejectShopBtn">
+                <i class="fa-regular fa-circle-xmark"></i> Reject Shop
+              </button>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div class="card notes-card">
+            <h3 class="card-title text-muted">ADMIN INTERNAL NOTES</h3>
+            <textarea placeholder="Add a reason for approval or specific feedback for rejection..."></textarea>
+            <p class="note-hint">These notes are only visible to the admin team.</p>
+          </div>
+
+        </div>
+
+      </div> <!-- End Layout -->
+
+    </div>
+  </main>
+
+  <script src="js/shop-details.js"></script>
+</body>
+</html>

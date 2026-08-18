@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApniDukaan - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="logo-container">
+        <div class="logo">
+          <span class="brand-apni">apni</span><span class="brand-dukaan">dukaan</span>
+        </div>
+        <p class="logo-subtitle">Admin Panel</p>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item active">
+          <a href="#"><i class="fa-solid fa-border-all"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="shop-details.html"><i class="fa-solid fa-shield-halved"></i> Shop Verification</a>
+        </li>
+        <li class="nav-item">
+          <a href="users.html"><i class="fa-solid fa-user-group"></i> Users</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-bag-shopping"></i> Orders</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-chart-simple"></i> Reports</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-bottom">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+        </li>
+        <li class="nav-item logout">
+          <a href="#" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <main class="main-content">
+    
+    <!-- Top Header -->
+<header class="top-header">
+      
+      <!-- NAYA: Mobile ke liye Hamburger aur Logo (Desktop pe hide rahega) -->
+      <div class="mobile-header-left">
+        <button id="mobileMenuBtn" class="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="mobile-logo-box">
+          <div class="logo">
+            <span class="brand-apni">apni</span><span class="brand-dukaan">dukaan</span>
+          </div>
+          <span class="mobile-logo-subtitle">Admin Panel</span>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search for stores, users, or orders...">
+      </div>
+      
+      <!-- Right Side Profile & Notifications -->
+      <div class="header-right">
+        <div class="notification">
+          <i class="fa-regular fa-bell"></i>
+          <span class="dot"></span>
+        </div>
+        <div class="user-profile">
+          <div class="user-info">
+            <span class="user-name" id="adminName">Admin User</span>
+            <span class="user-role">PLATFORM ADMIN</span>
+          </div>
+          <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="Admin Avatar" class="avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- Dashboard Body -->
+    <div class="dashboard-body">
+      
+      <div class="page-header">
+        <h1>Admin Dashboard</h1>
+        <p>Monitor platform activity, verify businesses, and manage marketplace operations across the premium ecosystem.</p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <!-- Card 1 -->
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="icon-box blue"><i class="fa-solid fa-user-group"></i></div>
+            <span class="trend green">+12%</span>
+          </div>
+          <h2  id="totalCustomersCount">12,584</h2>
+          <p class="stat-label">TOTAL CUSTOMERS</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="icon-box blue"><i class="fa-solid fa-store"></i></div>
+            <span class="trend green">+48</span>
+          </div>
+          <h2 id="totalShopsCount">1,248</h2>
+          <p class="stat-label">TOTAL SHOPS</p>
+        </div>
+
+        <!-- Card 3 (Pending Verification) -->
+        <div class="stat-card alert-card">
+          <div class="stat-top">
+            <div class="icon-box red"><i class="fa-solid fa-shield-halved"></i></div>
+            <span class="trend-dot red"></span>
+          </div>
+          <h2id="pendingVerificationsCount">32</h2>
+          <p class="stat-label">PENDING VERIFICATION</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="icon-box blue"><i class="fa-solid fa-receipt"></i></div>
+            <span class="trend green">+8%</span>
+          </div>
+          <h2 id="todaysOrdersCount">486</h2>
+          <p class="stat-label">TODAY'S ORDERS</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="icon-box blue"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <span class="trend-icon green"><i class="fa-regular fa-circle-check"></i></span>
+          </div>
+          <h2>356</h2>
+          <p class="stat-label">SERVICE PROVIDERS</p>
+        </div>
+      </div>
+
+      <!-- Data Table Section -->
+      <div class="table-container">
+        <div class="table-header">
+          <div>
+            <h3>Recent Shop Verification</h3>
+            <p>Review and approve new marketplace partners</p>
+          </div>
+          <a href="#" class="view-all">View All Requests</a>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>STORE</th>
+              <th>OWNER</th>
+              <th>TYPE</th>
+              <th>DATE SUBMITTED</th>
+              <th>STATUS</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody id="verificationTableBody">
+            <!-- Row 1 -->
+            <tr>
+              <td>
+                <div class="store-info">
+                  <div class="store-img"><i class="fa-solid fa-store"></i></div>
+                  <div class="store-details">
+                    <span class="store-name">FreshMart Organic</span>
+                    <span class="store-id">ID: SHOP-2948</span>
+                  </div>
+                </div>
+              </td>
+              <td>Ananya Sharma</td>
+              <td><span class="badge badge-product">Product</span></td>
+              <td>Oct 24, 2023</td>
+              <td>
+                <div class="status-indicator">
+                  <span class="dot pending-dot"></span> Pending
+                </div>
+              </td>
+             <td><button class="btn-primary" onclick="window.location.href='shop-details.html'">View Details</button></td>
+
+            </tr>
+
+            <!-- Row 2 -->
+            <tr>
+              <td>
+                <div class="store-info">
+                  <div class="store-img"><i class="fa-solid fa-spa"></i></div>
+                  <div class="store-details">
+                    <span class="store-name">Royal Salon & Spa</span>
+                    <span class="store-id">ID: SHOP-8821</span>
+                  </div>
+                </div>
+              </td>
+              <td>Vikram Singh</td>
+              <td><span class="badge badge-service">Service</span></td>
+              <td>Oct 23, 2023</td>
+              <td>
+                <div class="status-indicator">
+                  <span class="dot pending-dot"></span> Pending
+                </div>
+              </td>
+              <td><button class="btn-primary">View Details</button></td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr>
+              <td>
+                <div class="store-info">
+                  <div class="store-img"><i class="fa-solid fa-cake-candles"></i></div>
+                  <div class="store-details">
+                    <span class="store-name">Artisan Bakes</span>
+                    <span class="store-id">ID: SHOP-5104</span>
+                  </div>
+                </div>
+              </td>
+              <td>Priya Kapur</td>
+              <td><span class="badge badge-product">Product</span></td>
+              <td>Oct 22, 2023</td>
+              <td>
+                <div class="status-indicator">
+                  <span class="dot pending-dot"></span> Pending
+                </div>
+              </td>
+              <td><button class="btn-primary">View Details</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

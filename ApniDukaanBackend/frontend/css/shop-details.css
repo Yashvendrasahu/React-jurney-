@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body { display: flex; height: 100vh; background-color: #f4f7fb; color: #334155; overflow: hidden; }
+
+/* ---------------- SIDEBAR (Same as Dashboard) ---------------- */
+.sidebar { width: 250px; background-color: #ffffff; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; flex-shrink: 0; }
+.logo-container { padding: 24px; margin-bottom: 10px; }
+.logo { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+.brand-apni { color: #2563eb; } .brand-dukaan { color: #f97316; }
+.logo-subtitle { font-size: 13px; color: #64748b; margin-top: 4px; }
+.nav-menu { list-style: none; padding: 0 16px; }
+.nav-item { margin-bottom: 4px; }
+.nav-item a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; text-decoration: none; color: #475569; font-size: 14px; font-weight: 500; border-radius: 8px; transition: all 0.2s; }
+.nav-item a:hover { background-color: #f1f5f9; }
+.nav-item.active a { background-color: #eff6ff; color: #2563eb; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; }
+.nav-item.logout a { color: #ef4444; }
+.sidebar-bottom { padding-bottom: 24px; border-top: 1px solid #f1f5f9; padding-top: 16px; }
+
+/* ---------------- MAIN CONTENT & HEADER ---------------- */
+.main-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+.top-header { height: 70px; background-color: #ffffff; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; flex-shrink: 0; }
+.search-bar { display: flex; align-items: center; background-color: #f1f5f9; border-radius: 8px; padding: 10px 16px; width: 350px; }
+.search-bar i { color: #64748b; margin-right: 10px; }
+.search-bar input { border: none; background: none; outline: none; width: 100%; font-size: 14px; color: #334155; }
+.header-right { display: flex; align-items: center; gap: 20px; }
+.notification { font-size: 18px; color: #475569; cursor: pointer; }
+.user-profile { display: flex; align-items: center; gap: 12px; cursor: pointer; border-left: 1px solid #e2e8f0; padding-left: 20px; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; }
+.user-info { display: flex; flex-direction: column; }
+.user-name { font-size: 14px; font-weight: 600; color: #0f172a; }
+.user-role { font-size: 11px; color: #64748b; }
+
+/* ---------------- PAGE BODY & BREADCRUMBS ---------------- */
+.dashboard-body { flex: 1; padding: 32px; overflow-y: auto; }
+.page-header { margin-bottom: 24px; }
+.breadcrumbs { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.breadcrumbs i { font-size: 10px; margin: 0 6px; }
+.breadcrumbs strong { color: #0f172a; }
+.page-header h1 { font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
+.page-header p { font-size: 14px; color: #64748b; }
+
+/* ---------------- SHOP DETAILS LAYOUT ---------------- */
+.shop-details-layout { display: flex; gap: 24px; align-items: flex-start; }
+.left-column { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+.right-column { width: 320px; display: flex; flex-direction: column; gap: 24px; position: sticky; top: 0; }
+.two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+/* ---------------- CARDS ---------------- */
+.card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+.card-title { font-size: 14px; font-weight: 600; color: #334155; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.card-title i { color: #3b82f6; }
+.card-header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.card-header-flex .card-title { margin-bottom: 0; }
+
+/* ---------------- BADGES & TEXT ---------------- */
+.badge { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.badge.pending { background: #fef3c7; color: #92400e; }
+.badge.low-risk { background: #dcfce7; color: #166534; padding: 4px 10px; font-size: 10px; }
+.meta-label { font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
+.meta-value { font-size: 14px; font-weight: 500; color: #1e293b; }
+.text-green { color: #10b981; }
+
+/* ---------------- SPECIFIC CARDS ---------------- */
+
+/* Shop Header Card */
+.shop-header-card { display: flex; gap: 24px; align-items: center; }
+.shop-logo-box { width: 100px; height: 100px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #10b981; font-weight: 700; font-size: 11px; }
+.shop-logo-box i { font-size: 28px; margin-bottom: 8px; }
+.shop-main-info { flex: 1; }
+.shop-title-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.shop-title-row h2 { font-size: 20px; font-weight: 700; color: #0f172a; }
+.shop-meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* Owner Info */
+.owner-profile { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.avatar-circle { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; }
+.green-bg { background-color: #10b981; }
+.owner-name-box h4 { font-size: 15px; color: #0f172a; margin-bottom: 2px; }
+.owner-name-box span { font-size: 13px; color: #64748b; }
+.contact-list { list-style: none; }
+.contact-list li { font-size: 13px; color: #475569; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.contact-list li i { color: #94a3b8; }
+.verified-text { color: #10b981; font-weight: 600; font-size: 12px; margin-left: auto; }
+
+/* Business Summary */
+.summary-text { font-size: 13.5px; line-height: 1.6; color: #475569; }
+
+/* Images Gallery */
+.image-gallery { display: flex; gap: 16px; }
+.img-box { height: 100px; flex: 1; border-radius: 8px; background-color: #f1f5f9; background-size: cover; background-position: center; }
+.doc-placeholder { border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 12px; color: #64748b; font-weight: 500; }
+.doc-placeholder i { font-size: 24px; color: #10b981; margin-bottom: 8px; }
+.store-img1 { background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=200'); }
+.store-img2 { background-image: url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&q=80&w=200'); }
+
+/* Location Card */
+.coordinates { font-size: 12px; font-weight: 600; color: #64748b; font-family: monospace; }
+.location-content { display: flex; gap: 20px; }
+.map-placeholder { width: 220px; height: 140px; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/OSM_map_of_Delhi.png/400px-OSM_map_of_Delhi.png') center/cover; border-radius: 8px; position: relative; }
+.map-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #2563eb; font-size: 24px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.address-details { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.address-text { font-size: 14px; color: #1e293b; line-height: 1.5; margin-bottom: 12px; }
+.map-btn { padding: 10px 16px; font-size: 13px; }
+
+/* Operating Hours & Checklist */
+.hours-table { width: 100%; border-collapse: collapse; font-size: 13.5px; color: #475569; }
+.hours-table td { padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+.hours-table tr:last-child td { border-bottom: none; }
+.hours-table td:last-child { text-align: right; color: #1e293b; }
+
+.progress-count { font-size: 14px; font-weight: 700; color: #2563eb; }
+.progress-bar-bg { height: 6px; background-color: #e2e8f0; border-radius: 4px; margin-bottom: 16px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background-color: #2563eb; border-radius: 4px; }
+.checklist-items { list-style: none; font-size: 13px; color: #475569; }
+.checklist-items li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+
+/* Action Panel (Right Column) */
+.action-card .card-title { margin-bottom: 24px; color: #0f172a; }
+.summary-list { margin-bottom: 24px; }
+.summary-item { display: flex; justify-content: space-between; align-items: center; font-size: 13.5px; padding: 12px 0; border-bottom: 1px dashed #e2e8f0; }
+.summary-item:last-child { border-bottom: none; }
+.summary-item span { color: #64748b; }
+.summary-item strong { color: #0f172a; }
+
+.action-buttons { display: flex; flex-direction: column; gap: 12px; }
+.btn-primary, .btn-secondary, .btn-danger-outline { padding: 12px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; }
+.full-width { width: 100%; }
+
+.btn-primary { background-color: #1d4ed8; color: white; border: none; }
+.btn-primary:hover { background-color: #1e40af; }
+.btn-secondary { background-color: #eff6ff; color: #2563eb; border: none; }
+.btn-secondary:hover { background-color: #dbeafe; }
+.btn-danger-outline { background-color: transparent; border: 1px solid #fca5a5; color: #ef4444; }
+.btn-danger-outline:hover { background-color: #fef2f2; }
+
+/* Notes Area */
+.notes-card { background-color: #f8fafc; }
+.text-muted { color: #94a3b8; font-size: 12px; letter-spacing: 0.5px; }
+.notes-card textarea { width: 100%; height: 100px; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; font-size: 13px; color: #334155; resize: none; margin-bottom: 12px; outline: none; }
+.notes-card textarea:focus { border-color: #94a3b8; }
+.note-hint { font-size: 11px; color: #94a3b8; font-style: italic; }
+
+
+/* Mobile Header Elements (Hidden on Desktop) */
+.mobile-header-left { display: none; }
+.sidebar-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 999; }
+
+/* =========================================================
+   NEW RESPONSIVE DESIGN (HAMBURGER MENU & FLEX HEADER)
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .shop-details-layout { flex-direction: column; }
+  .right-column { width: 100%; position: static; }
+}
+
+@media (max-width: 768px) {
+  /* 1. Top Header Adjustments */
+  .top-header { flex-wrap: wrap; height: auto; padding: 12px 16px; justify-content: space-between; }
+  
+  /* 2. Show Mobile Left Section (Hamburger + Logo) */
+  .mobile-header-left { display: flex; align-items: center; gap: 12px; }
+  .mobile-menu-btn { background: none; border: none; font-size: 22px; color: #334155; cursor: pointer; padding: 4px; }
+  .mobile-logo-box { display: flex; flex-direction: column; }
+  .mobile-logo-box .logo { font-size: 20px; line-height: 1; }
+  .mobile-logo-subtitle { font-size: 11px; color: #64748b; margin-top: 2px; }
+  
+  /* 3. Header Right (Hide text, keep avatar) */
+  .header-right { order: 2; gap: 16px; }
+  .header-right .user-info { display: none; } /* Mobile me jagah bachane ke liye text hide */
+  
+  /* 4. Search Bar Shift to Bottom Full Width */
+  .search-bar { order: 3; width: 100%; margin-top: 12px; }
+
+  /* 5. Sidebar Off-Canvas (Drawer) Setup */
+  .sidebar { position: fixed; left: -260px; top: 0; bottom: 0; width: 260px; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.1); }
+  .sidebar.active { left: 0; } /* Jab JS active class dega tab ye open hoga */
+  .sidebar-overlay.active { display: block; }
+  
+  /* Hide Original Desktop Logo inside Sidebar */
+  .sidebar .logo-container { display: none; }
+  .sidebar .nav-menu { padding-top: 24px; }
+
+  /* 6. Dashboard Body Fixes */
+  .dashboard-body { padding: 16px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; }
+  .table-container { overflow-x: auto; }
+  .data-table { min-width: 600px; }
+  
+  /* 7. Shop Details Fixes */
+  .two-col-grid { grid-template-columns: 1fr; }
+  .shop-header-card { flex-direction: column; text-align: center; }
+  .shop-meta-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .owner-profile { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .shop-meta-grid { grid-template-columns: 1fr; }
+  .image-gallery { flex-direction: column; }
+  .img-box { height: 150px; }
+  .map-placeholder { width: 100%; height: 200px; }
+  .location-content { flex-direction: column; }
+}

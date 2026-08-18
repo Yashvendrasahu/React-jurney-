@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApniDukaan - Shop Verification List</title>
+  <link rel="stylesheet" href="css/shop-verification.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar Overlay for Mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="logo-container">
+        <div class="logo">
+          <span class="brand-apni">apni</span><span class="brand-dukaan">dukaan</span>
+        </div>
+        <p class="logo-subtitle">Admin Panel</p>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a>
+        </li>
+        <!-- Active class is on Shop Verification -->
+        <li class="nav-item active">
+          <a href="shop-verification.html"><i class="fa-solid fa-shield-halved"></i> Shop Verification</a>
+        </li>
+        <li class="nav-item">
+          <a href="users.html"><i class="fa-solid fa-user-group"></i> Users</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-bag-shopping"></i> Orders</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-chart-simple"></i> Reports</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-bottom">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+        </li>
+        <li class="nav-item logout">
+          <a href="#" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Top Header -->
+    <header class="top-header">
+      <!-- Mobile Header Left (Hamburger & Logo) -->
+      <div class="mobile-header-left">
+        <button id="mobileMenuBtn" class="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="mobile-logo-box">
+          <div class="logo">
+            <span class="brand-apni">apni</span><span class="brand-dukaan">dukaan</span>
+          </div>
+          <span class="mobile-logo-subtitle">Admin Panel</span>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search stores, owners, or IDs...">
+      </div>
+      
+      <!-- Right Side Profile & Notifications -->
+      <div class="header-right">
+        <div class="notification">
+          <i class="fa-regular fa-bell"></i>
+          <span class="dot"></span>
+        </div>
+        <div class="help-icon"><i class="fa-regular fa-circle-question"></i></div>
+        <div class="user-profile">
+          <img src="https://ui-avatars.com/api/?name=Admin+Profile&background=0D8ABC&color=fff" alt="Avatar" class="avatar">
+          <div class="user-info">
+            <span class="user-name">Admin Profile Avatar</span>
+            <span class="user-role">Senior Administrator</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Body -->
+    <div class="dashboard-body">
+      
+      <!-- Page Title & Refresh Action -->
+      <div class="page-header flex-between">
+        <div>
+          <h1>Shop Verification</h1>
+          <p>Review newly registered businesses before making them publicly visible on ApniDukaan.</p>
+        </div>
+        <button class="btn-primary"><i class="fa-solid fa-arrow-rotate-right"></i> Refresh List</button>
+      </div>
+
+      <!-- 4 Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="icon-box bg-orange"><i class="fa-solid fa-clipboard-list"></i></div>
+          <div class="stat-info">
+            <p>Pending Verification</p>
+            <h2>32</h2>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="icon-box bg-green"><i class="fa-solid fa-certificate"></i></div>
+          <div class="stat-info">
+            <p>Approved Today</p>
+            <h2>18</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="icon-box bg-red"><i class="fa-solid fa-ban"></i></div>
+          <div class="stat-info">
+            <p>Rejected Today</p>
+            <h2>4</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="icon-box bg-blue"><i class="fa-solid fa-store"></i></div>
+          <div class="stat-info">
+            <p>Total Verified Shops</p>
+            <h2>1,248</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters Bar -->
+      <div class="filters-bar">
+        <div class="search-filter">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search shop name...">
+        </div>
+        
+        <div class="select-group">
+          <select><option>Business Type</option></select>
+          <select><option>Status</option></select>
+          <select><option>Category</option></select>
+          <select><option>City</option></select>
+        </div>
+        
+        <button class="btn-outline"><i class="fa-solid fa-arrow-down-short-wide"></i> Date Sort</button>
+      </div>
+
+      <!-- Data Table -->
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="checkbox-cell"><input type="checkbox"></th>
+              <th>STOREFRONT</th>
+              <th>BUSINESS DETAILS</th>
+              <th>TYPE / CATEGORY</th>
+              <th>CITY</th>
+              <th>SUBMITTED</th>
+              <th>VERIFICATION</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row 1 -->
+            <tr>
+              <td class="checkbox-cell"><input type="checkbox"></td>
+              <td><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=100" alt="Store" class="store-img"></td>
+              <td>
+                <div class="business-info">
+                  <div class="b-logo">FM</div>
+                  <div>
+                    <strong>FreshMart Grocery</strong>
+                    <span>Ramesh Patel</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="stack-text">
+                  <strong>Product</strong>
+                  <span>Grocery</span>
+                </div>
+              </td>
+              <td>Satna</td>
+              <td>
+                <div class="stack-text">
+                  <strong>26 Jul</strong>
+                  <span>2026</span>
+                </div>
+              </td>
+              <td>
+                <div class="badge-stack">
+                  <span class="badge verified"><i class="fa-solid fa-circle-check"></i> Email Verified</span>
+                  <span class="badge pending">Pending</span>
+                </div>
+              </td>
+              <td><button class="btn-light" onclick="window.location.href='shop-details.html'">View Details</button></td>
+            </tr>
+
+            <!-- Row 2 -->
+            <tr>
+              <td class="checkbox-cell"><input type="checkbox"></td>
+              <td><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=100" alt="Store" class="store-img"></td>
+              <td>
+                <div class="business-info">
+                  <div class="b-logo bg-light">RS</div>
+                  <div>
+                    <strong>Royal Salon</strong>
+                    <span>Anjali Sharma</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="stack-text">
+                  <strong>Service</strong>
+                  <span>Beauty & Wellness</span>
+                </div>
+              </td>
+              <td>Maihar</td>
+              <td>
+                <div class="stack-text">
+                  <strong>26 Jul</strong>
+                  <span>2026</span>
+                </div>
+              </td>
+              <td>
+                <div class="badge-stack">
+                  <span class="badge verified"><i class="fa-solid fa-circle-check"></i> Email Verified</span>
+                  <span class="badge pending">Pending</span>
+                </div>
+              </td>
+              <td><button class="btn-light" onclick="window.location.href='shop-details.html'">View Details</button></td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr>
+              <td class="checkbox-cell"><input type="checkbox"></td>
+              <td><img src="https://images.unsplash.com/photo-1531297172867-4f54131454c6?auto=format&fit=crop&q=80&w=100" alt="Store" class="store-img"></td>
+              <td>
+                <div class="business-info">
+                  <div class="b-logo bg-dark">TZ</div>
+                  <div>
+                    <strong>TechZone</strong>
+                    <span>Amit Verma</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="stack-text">
+                  <strong>Product</strong>
+                  <span>Electronics</span>
+                </div>
+              </td>
+              <td>Rewa</td>
+              <td>
+                <div class="stack-text">
+                  <strong>25 Jul</strong>
+                  <span>2026</span>
+                </div>
+              </td>
+              <td>
+                <div class="badge-stack">
+                  <span class="badge verified"><i class="fa-solid fa-circle-check"></i> Email Verified</span>
+                  <span class="badge approved">Approved</span>
+                </div>
+              </td>
+              <td><button class="btn-light" onclick="window.location.href='shop-details.html'">View Details</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Table Footer Pagination -->
+        <div class="table-footer">
+          <span class="showing-text">Showing 1 to 3 of 32 Pending Shops</span>
+          <div class="pagination">
+            <button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/shop-verification.js"></script>
+</body>
+</html>

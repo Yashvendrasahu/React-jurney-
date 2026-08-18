@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApniDukaan - User Management</title>
+  <link rel="stylesheet" href="css/users.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar Overlay for Mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="logo-container">
+        <div class="logo">
+          <span class="brand-apni">apni</span><span class="brand-dukaan">dukaan</span>
+        </div>
+        <p class="logo-subtitle">Admin Panel</p>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="shop-verification.html"><i class="fa-solid fa-shield-halved"></i> Shop Verification</a>
+        </li>
+        <!-- Active class ab Users par hai -->
+        <li class="nav-item active">
+          <a href="users.html"><i class="fa-solid fa-user-group"></i> Users</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-bag-shopping"></i> Orders</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-chart-simple"></i> Reports</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-bottom">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+        </li>
+        <li class="nav-item logout">
+          <a href="#" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Top Header -->
+    <header class="top-header">
+      <!-- Mobile Header Left (Hamburger & Logo) -->
+      <div class="mobile-header-left">
+        <button id="mobileMenuBtn" class="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="mobile-logo-box">
+          <div class="logo">
+            <span class="brand-apni">apni</span><span class="brand-dukaan">dukaan</span>
+          </div>
+          <span class="mobile-logo-subtitle">Admin Panel</span>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Global search...">
+      </div>
+      
+      <!-- Right Side Profile & Notifications -->
+      <div class="header-right">
+        <a href="#" class="support-link"><i class="fa-solid fa-headset"></i> Support</a>
+        <div class="notification">
+          <i class="fa-regular fa-bell"></i>
+          <span class="dot"></span>
+        </div>
+        <div class="user-profile">
+          <div class="user-info">
+            <span class="user-name">ApniDukaan</span>
+            <span class="user-role">Portal v2.4</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Body -->
+    <div class="dashboard-body">
+      
+      <!-- Title & Action Button -->
+      <div class="page-header flex-between">
+        <div>
+          <h1>User Management</h1>
+          <p>Manage customers and shopkeepers registered on the ApniDukaan platform.</p>
+        </div>
+        <button class="btn-primary"><i class="fa-solid fa-user-plus"></i> Add New User</button>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="icon-circle blue-bg"><i class="fa-regular fa-user"></i></div>
+            <span class="badge badge-green">+4.2%</span>
+          </div>
+          <p class="stat-label">Total Customers</p>
+          <h2>12,584</h2>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="icon-circle orange-bg"><i class="fa-solid fa-store"></i></div>
+            <span class="badge badge-green">+2.1%</span>
+          </div>
+          <p class="stat-label">Total Shopkeepers</p>
+          <h2>1,248</h2>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="icon-circle green-bg"><i class="fa-solid fa-check"></i></div>
+            <span class="status-text">Active</span>
+          </div>
+          <p class="stat-label">Active Accounts</p>
+          <h2>13,420</h2>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="icon-circle red-bg"><i class="fa-solid fa-ban"></i></div>
+            <span class="status-text red-text">High Risk</span>
+          </div>
+          <p class="stat-label">Blocked Accounts</p>
+          <h2>18</h2>
+        </div>
+      </div>
+
+      <!-- Filters Section -->
+      <div class="filters-container">
+        <div class="search-filter">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search by name, email or phone...">
+        </div>
+        <div class="select-filters">
+          <select><option>All Roles</option><option>Customer</option><option>Shopkeeper</option></select>
+          <select><option>All Status</option><option>Active</option><option>Blocked</option></select>
+          <select><option>All Cities</option><option>Satna</option><option>Maihar</option><option>Rewa</option></select>
+        </div>
+        <div class="sort-actions">
+          <select><option>Newest First</option><option>Oldest First</option></select>
+          <a href="#" class="reset-link">Reset Filters</a>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Profile</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Role</th>
+              <th>City</th>
+              <th>Joined Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=e2e8f0&color=475569" alt="User" class="avatar-small"></td>
+              <td><strong>Rahul<br>Sharma</strong></td>
+              <td>rahul@gmail.com</td>
+              <td>+91<br>9876543210</td>
+              <td><span class="role-badge customer">Customer</span></td>
+              <td>Satna</td>
+              <td>20 Jul<br>2026</td>
+              <td><span class="dot-status active"></span></td>
+            </tr>
+            <tr>
+              <td><div class="avatar-initials orange-initials">RG</div></td>
+              <td><strong>Ramesh<br>Grocery</strong></td>
+              <td>ramesh@gmail.com</td>
+              <td>+91<br>9876543211</td>
+              <td><span class="role-badge shopkeeper">Shopkeeper</span></td>
+              <td>Maihar</td>
+              <td>21 Jul<br>2026</td>
+              <td><span class="dot-status active"></span></td>
+            </tr>
+            <tr>
+              <td><img src="https://ui-avatars.com/api/?name=Priya+Singh&background=e2e8f0&color=475569" alt="User" class="avatar-small"></td>
+              <td><strong>Priya<br>Singh</strong></td>
+              <td>priya@gmail.com</td>
+              <td>+91<br>9876543212</td>
+              <td><span class="role-badge customer">Customer</span></td>
+              <td>Rewa</td>
+              <td>22 Jul<br>2026</td>
+              <td><span class="dot-status blocked"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination & Footer -->
+      <div class="pagination-container">
+        <span class="page-info">Showing <strong>1 - 10</strong> of 12,584 users</span>
+        <div class="pagination">
+          <button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <span class="dots">...</span>
+          <button class="page-btn">125</button>
+          <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <footer class="dashboard-footer">
+        <p>&copy; 2024 ApniDukaan. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Support</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="js/users.js"></script>
+</body>
+</html>
